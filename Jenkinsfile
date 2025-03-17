@@ -10,13 +10,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                build 'PES1UG22CS004-1'
-                sh 'g++ main.cpp -o output'
+                sh 'g++ -o PES1UG22CS004-1 main.cpp'
             }
         }
         stage('Test') {
             steps {
-                sh './output'
+                sh './PES1UG22CS004-1'
             }
         }
         stage('Deploy') {
